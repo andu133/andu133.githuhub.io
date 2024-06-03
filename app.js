@@ -13,7 +13,7 @@ btn1.addEventListener("click", function(){
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText(`${tg.initData}`);
+		tg.MainButton.setText("Send tg data");
 		item = `${tg.initData}`;
 		tg.MainButton.show();
 	}
