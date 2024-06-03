@@ -11,38 +11,23 @@
     
     <script type="text/javascript">
         function onTelegramAuth(user) {
-            // Создаем JSON-объект с данными пользователя
-            const userData = {
-                id: user.id,
-                first_name: user.first_name,
-                last_name: user.last_name,
-                username: user.username,
-                photo_url: user.photo_url,
-                auth_date: user.auth_date,
-                hash: user.hash
-            };
+            // Выводим данные пользователя в консоль
+            console.log('User Data:', user);
 
-            // Отправляем данные на сервер
-            fetch('/auth', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userData),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            // Пример отображения данных пользователя на странице
+            const usercard = document.getElementById("usercard");
+            usercard.innerHTML = `
+                <p>ID: ${user.id}</p>
+                <p>First Name: ${user.first_name}</p>
+                <p>Last Name: ${user.last_name}</p>
+                <p>Username: ${user.username}</p>
+                <p>Photo URL: ${user.photo_url}</p>
+                <p>Auth Date: ${user.auth_date}</p>
+                <p>Hash: ${user.hash}</p>
+            `;
         }
     </script>
+
+    <div id="usercard"></div>
 </body>
 </html>
