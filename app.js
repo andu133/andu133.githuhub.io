@@ -6,23 +6,25 @@ tg.MainButton.color = '#2cab37';
 
 let item = "";
 
+function sessionStorageGet(key) {
+    try {
+      return JSON.parse(window.sessionStorage.getItem('__telegram__' + key));
+    } catch (e) {}
+    return null;
+  }
+
 let btn1 = document.getElementById("btn1");
 
 btn1.addEventListener("click", function(){
-    if (tg.MainButton.isVisible) {
+        var storedParams = sessionStorageGet('initParams');
         tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Send tg data");
-        item = tg.initData;
-        tg.MainButton.show();
-    }
+        p.innerText = storedParams;
+
 });
+
+
 
 // Отправка данных при нажатии на кнопку
-tg.onEvent('mainButtonClicked', function() {
-    tg.sendData('TEST');
-});
-
 // Обновление данных в usercard
 let usercard = document.getElementById("usercard");
 let p = document.createElement("p");
