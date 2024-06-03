@@ -11,15 +11,24 @@
     
     <script type="text/javascript">
         function onTelegramAuth(user) {
-            alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-            
-            // Отправка данных на сервер
+            // Создаем JSON-объект с данными пользователя
+            const userData = {
+                id: user.id,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                username: user.username,
+                photo_url: user.photo_url,
+                auth_date: user.auth_date,
+                hash: user.hash
+            };
+
+            // Отправляем данные на сервер
             fetch('/auth', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(user),
+                body: JSON.stringify(userData),
             })
             .then(response => response.json())
             .then(data => {
