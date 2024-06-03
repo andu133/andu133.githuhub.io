@@ -19,8 +19,8 @@ btn1.addEventListener("click", function(){
 });
 
 // Отправка данных при нажатии на кнопку
-tg.MainButton.on('click', function() {
-    tg.sendData("data");
+tg.onEvent('mainButtonClicked', function() {
+    tg.sendData('TEST');
 });
 
 // Обновление данных в usercard
