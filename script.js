@@ -1,4 +1,4 @@
-// const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 const codeInput = document.getElementById("codeInput");
 const errorMessage = document.getElementById("errorMessage");
 const accept = document.getElementById("accept");
