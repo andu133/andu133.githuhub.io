@@ -1,46 +1,102 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	color: var(--tg-theme-text-color);
-	background: var(--tg-theme-bg-color);
+    display: flex;
+    justify-content: center;
+    background-color: rgba(21, 21, 21, 0.56);
 }
 
-.container {
-	max-width: 390px;
+.content {
+    width: 250px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 20px;
 }
 
-.inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+.description{
+    padding-bottom: 22px;
 }
 
-.img {
-	width: 150px;
+.input{
+    display: flex;
+    flex-direction: column;
 }
 
-.item {
-	text-align: center;
+input {
+    outline: none;
+    padding: 14px 0;
+    font-size: 17px;
+    font-weight: 450;
+    line-height: 24px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b9bfc7;
+    color: #212121;
 }
 
-.btn {
-	display: inline-block;
-	padding: 10px 20px;
-	border: none;
-	background: rgb(248, 168, 24);
-	border-radius: 10px;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-
-	transition: background .2s linear;
+input::placeholder{
+    color: #a6acb7;
+    padding: 8px;
 }
 
-.btn:hover {
-	background: lightgreen;
+.label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    color: #707781;
 }
 
-.usercard {
-	text-align: center;
+.actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 22px;
+}
+
+.button {
+    flex: 1;
+}
+
+.canсel{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px 16px;
+    border: none;
+    user-select: none;
+    border-radius: 100px;
+    color: #707781;
+    font-size: 19px;
+    line-height: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #edf1f5;
+}
+
+.button.canсel:hover {
+    background: #dde2e9;
+}
+
+.accept{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px 16px;
+    border: none;
+    user-select: none;
+    border-radius: 100px;
+    font-size: 19px;
+    line-height: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #212121;
+    color: #fff;
+}
+
+.button.accept:hover {
+    background: #51565c;
 }
