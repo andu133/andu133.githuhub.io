@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Get code</title>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="content">
         <div class="description">
-            Введите код отправленый вам в телеграмм
+            Введите пятизначный код отправленый вам в телеграмм
         </div>
         <div class="input">
             <span class="label">Введите код*</span>
-            <input type="text" placeholder="ваш код">
+            <input type="text" id="codeInput" autocomplete="off" placeholder="Введите ваш код">
+            <span class="error-message" id="errorMessage"></span>
         </div>
         <div class="actions">
-            <button class="button canсel" id="btn1">Отмена</button>
-            <button class="button accept">Принять</button>
+            <button class="button canсel" id="canсel">Отмена</button>
+            <button class="button accept" id="accept" disabled>Принять</button>
         </div>
     </div>
 </body>
