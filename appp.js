@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   codeInput.addEventListener("input", function () {
 
     const cleanedValue = this.value.replace(/\D/g, "");
-    if(this.value)
-    console.log(this.value);
+
     // Валидация на наличие только цифр
     if(!this.value){
       errorMessage.style.display = "block";
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // function sessionStorageGet(key) {
 //     try {
-//       return JSON.parse(window.sessionStorage.getItem('__telegram__' + key));
+//       return JSON.parse(window.sessionStorage.getItem('telegram' + key));
 //     } catch (e) {}
 //     return null;
 //   }
@@ -59,5 +58,5 @@ document.addEventListener("DOMContentLoaded", function () {
 // // Обновление данных в usercard
 // let usercard = document.getElementById("usercard");
 // let p = document.createElement("p");
-// p.innerText = `${tg.initData}`;
+// p.innerText = ${tg.initData};
 // usercard.appendChild(p);
