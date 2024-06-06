@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Login Widget</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Get code</title>
 </head>
 <body>
-    <!-- Telegram Login Widget -->
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="testwebappan_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
-    
-    <script type="text/javascript">
-        function onTelegramAuth(user) {
-            // Выводим данные пользователя в консоль
-            console.log('User Data:', user);
-
-            // Пример отображения данных пользователя на странице
-            const usercard = document.getElementById("usercard");
-            usercard.innerHTML = `
-                <p>ID: ${user.id}</p>
-                <p>First Name: ${user.first_name}</p>
-                <p>Last Name: ${user.last_name}</p>
-                <p>Username: ${user.username}</p>
-                <p>Photo URL: ${user.photo_url}</p>
-                <p>Auth Date: ${user.auth_date}</p>
-                <p>Hash: ${user.hash}</p>
-            `;
-        }
-    </script>
-
-    <div id="usercard"></div>
+    <div class="content">
+        <div class="description">
+            Введите код отправленый вам в телеграмм
+        </div>
+        <div class="input">
+            <span class="label">Введите код*</span>
+            <input type="text" placeholder="ваш код">
+        </div>
+        <div class="actions">
+            <button class="button canсel" id="btn1">Отмена</button>
+            <button class="button accept">Принять</button>
+        </div>
+    </div>
 </body>
 </html>
